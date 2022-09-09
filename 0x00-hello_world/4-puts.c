@@ -1,7 +1,7 @@
-#!/bin/bash
+#include <stdlib.h>
 #include <stdio.h>
 
-void puts(string message)
+void puts(char message)
 {
 	printf("%s", message);
 	
