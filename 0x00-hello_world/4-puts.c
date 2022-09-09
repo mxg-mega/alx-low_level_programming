@@ -1,15 +1,9 @@
-#include <stdlib.h>
 #include <stdio.h>
 
-void puts(char message)
-{
-	printf("%s", message);
-	
-
-}
 int main()
-{
-	puts("Programming is like building a multilinguial puzzle\n");
+{ 	//declaring a string in c (cuz it is an array)
+	char message[] = "Programming is like building a multilinguial puzzle\n"; 
+	puts(message);
 
 	return 0;
 }
