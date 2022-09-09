@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	/*the puts function is like printf,also strings are initialized as arrays because there is no data type string*/
+	/*puts is like printf,also strings are initialized as arrays*/
 	char message[] = "\"Programming is like building a multilingual puzzle";
 
 	puts(message);
