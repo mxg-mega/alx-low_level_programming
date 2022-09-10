@@ -7,12 +7,17 @@
  */
 int main(void)
 {
-	/*printing data types for 64-bits*/
+	/*printing data types for 32-size*/
+	printf("Size of a char: 1 byte(s)\n");
+	printf("Size of an int: 4 byte(s)\n");
+	printf("Size of a long int: 4 byte(s)\n");
+	printf("Size of a long long int: 8 byte(s)\n");
+	printf("Size of a float: 4 byte(s)\n");
+	/*printing data types for 64-size*/
 	printf("Size of a char: 1 byte(s)\n");
 	printf("Size of an int: 4 byte(s)\n");
 	printf("Size of a long int: 8 byte(s)\n");
 	printf("Size of a long long int: 8 byte(s)\n");
 	printf("Size of a float: 4 byte(s)\n");
-
 	return (0);
 }
