@@ -1,6 +1,2 @@
 #!/bin/bash
-<<<<<<< HEAD
 gcc -E $CFILE > c 
-=======
-gcc -E $CFILE > c
->>>>>>> 7e3235a2b3b7dfebcc1a4c45639036afc4a1a883
