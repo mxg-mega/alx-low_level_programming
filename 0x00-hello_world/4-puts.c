@@ -1,5 +1,8 @@
 #include <stdio.h>
-/** the progam prints a string using put method*/
+/** 
+*main - Entry point
+*return: Always 0 (Success) 
+*/
 int main(void)
 {
 	/*puts is like printf,also strings are initialized as arrays*/

@@ -1,7 +1,10 @@
 #include <stdio.h>
 /**
- *prints the data types
- **/
+*main - Entry point
+*return: Always 0
+*Description
+*	prints the data types of size 64 and 32
+ */
 int main(void)
 {
 	/*printing data types for 32-bits*/
