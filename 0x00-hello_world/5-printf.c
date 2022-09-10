@@ -1,7 +1,8 @@
 #include <stdio.h>
 /**
 *main - Entry point
-*return: Always 0 
+*return: Always 0
+*Description: display using printf
 */
 int main(void)
 {
