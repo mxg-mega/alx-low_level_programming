@@ -2,7 +2,7 @@
 /**
 *main - Entry point
 *return: Always 0 
- */
+*/
 int main(void)
 {
 	/*using printf method to display a output*/
