@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
  *prints the data types
- * */
+ **/
 int main(void)
 {
 	/*printing data types for 32-bits*/
