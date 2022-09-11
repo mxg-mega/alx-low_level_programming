@@ -6,8 +6,13 @@
 int main(void)
 {
 	char newline = '\n';
-	for(int i = 97 ;i <= 122; i++)
+	int i = 97;
+
+	while(i <= 122)
+	{
 		putchar(i);
+		i++;
+	}
 	putchar(newline);
 	return (0);
 }
