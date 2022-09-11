@@ -8,7 +8,7 @@ int main(void)
 	int i = 65;
 	int L = 97;
 	char newline = '\n';
-	
+
 	while (L <= 122)
 	{
 		putchar(L);
