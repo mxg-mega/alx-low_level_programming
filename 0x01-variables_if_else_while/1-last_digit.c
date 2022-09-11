@@ -11,7 +11,7 @@ int main(void)
 	int n;
 
 	srand(time(0));
-	n = rand() - RAND_MAX /2;
+	n = rand() - RAND_MAX / 2;
 	/*using the modulus to divide by ten to get the last digit*/
 
 	if ((n % 10) > 5)
