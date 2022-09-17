@@ -7,18 +7,14 @@
   */
 int _islower(int c)
 {
-	int B = 97, end = 122, counter = 0;
+	int B = 97, end = 122;
 
-	while (counter < 1)
+	if ((c >= B) && (c <= end))
 	{
-		if ((c >= B) && (c <= end))
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
-		counter++;
+		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 }
