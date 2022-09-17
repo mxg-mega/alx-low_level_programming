@@ -1,12 +1,17 @@
-#include <stdio.h>
 #include "main.h"
 /**
-*main - Entry point
-*Return: 0
+*prints_alphabet - Entry point
+*Return: no returns
 */
-int main(void)
+void print_alphabet(void)
 {
-	print_alphabet();
+	int a = 97;
+
+	while (a <= 122)
+	{
+		_putchar(a);
+		a++;
+	}
 	_putchar('\n');
 	return (0);
 }
