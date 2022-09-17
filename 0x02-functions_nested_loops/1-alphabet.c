@@ -1,5 +1,4 @@
 #include "main.h"
-void print_alphabet(void);
 /**
 *prints_alphabet - Entry point
 *Return: no returns

@@ -12,19 +12,3 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
-
-/**
-*print_alphabet - function that prints alphabets
-*
-*Return: no return
-*/
-void print_alphabet(void)
-{
-	int a = 97;
-
-	while (a <= 122)
-	{
-		_putchar(a);
-		a++;
-	}
-}
