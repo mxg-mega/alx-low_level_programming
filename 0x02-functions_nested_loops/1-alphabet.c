@@ -13,7 +13,6 @@ void print_alphabet(void)
 		_putchar(a);
 		a++;
 	}
-
 }
 /**
 *main - Entry point
