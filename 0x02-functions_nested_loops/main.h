@@ -14,6 +14,7 @@ int _putchar(char c)
 }
 /**
 *print_alphabet - function
+*
 *Return: no return
 */
 void print_alphabet(void)
@@ -25,5 +26,4 @@ void print_alphabet(void)
 		_putchar(a);
 		a++;
 	}
-	_putchar('\n');
 }
