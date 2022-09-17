@@ -5,7 +5,7 @@
   *
   *Return: the absolute value of the argument
   */
-int _abs(int)
+int _abs(int n)
 {
 	int n;
 
