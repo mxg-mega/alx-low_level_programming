@@ -13,8 +13,8 @@ void print_alphabet_x10(void)
 
 		while (L <= 122)
 		{
-			_putchar(a);
-			L++'
+			_putchar(L);
+			L++;
 		}
 		_putchar('\n');
 		c--;
