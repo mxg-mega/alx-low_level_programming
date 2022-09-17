@@ -1,7 +1,7 @@
 #include "main.h"
 /**
   *_islower - function that checks if the argument is lower case
-  *@c: is the int argument that is checked as an ascii if it is under the lower alphabet notaions
+  *@c: is the int argument that is checked in ascii if it is lowercase alphabet
   *
   *Return:1 if true and 0 if false
   */
