@@ -13,7 +13,7 @@ int _putchar(char c)
 	return (write(1, &c, 1));
 }
 /**
-*print_alphabet - function
+*print_alphabet - function that prints alphabets
 *
 *Return: no return
 */
