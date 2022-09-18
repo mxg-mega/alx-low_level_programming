@@ -7,11 +7,9 @@
   */
 int print_last_digit(int n)
 {
-	int l;
+	int l, print_two_of_it;
 
 	l = n % 10;
-	if (l >= '0' && l <= '9')
-	{
-		return (l);
-	}
+	print_two_of_it = l * 11;
+	return (print_two_of_it);
 }
