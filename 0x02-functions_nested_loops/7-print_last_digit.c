@@ -13,6 +13,5 @@ int print_last_digit(int n)
 	if (l >= '0' && l <= '9')
 	{
 		return (l);
-		return (l);
 	}
 }
