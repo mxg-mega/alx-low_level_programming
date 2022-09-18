@@ -7,9 +7,9 @@
   */
 int print_last_digit(int n)
 {
-	int l;
+	int l, z;
 
 	l = n % 10;
-	int z = l * 11;
+	z = l * 11;
 	return (z);
 }
