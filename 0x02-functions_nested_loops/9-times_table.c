@@ -20,10 +20,9 @@ void times_table(void)
 
 			_putchar(',');
 			_putchar(' ');
-			/*this if block takes the product and split into two
-			*print the first part(tens) by dividing by 10
-			*after the if block using modulus u print the second digit
-			*/
+			/*this if block takes the product and split into two*/
+			/*print the first part(tens) by dividing by 10*/
+			/*after the if block using modulus u print the second digit*/
 			if (multiplication <= 9)
 			{
 				_putchar(' ');
