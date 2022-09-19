@@ -7,8 +7,6 @@
 */
 void print_to_98(int n)
 {
-	int count = 0;
-
 	if (n >= 98)
 	{
 		/*if the number is grater than 98*/
