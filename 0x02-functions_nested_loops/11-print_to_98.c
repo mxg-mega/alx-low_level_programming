@@ -14,8 +14,8 @@ void print_to_98(int n)
 		{
 			_putchar((n / 10) + '0');
 			_putchar((n % 10) + '0');
-			_putchar('\n');
 			n--;
+			_putchar('\n');
 		}
 	}
 	else
@@ -23,10 +23,10 @@ void print_to_98(int n)
 		/*if number is less than 98*/
 		while (n < 98)
 		{
-			_putchar((n /10) + '0');
+			_putchar((n / 10) + '0');
 			_putchar((n % 10) + '0');
-			_putchar('\n');
 			n++;
+			_putchar('\n');
 		}
 	}
 }
