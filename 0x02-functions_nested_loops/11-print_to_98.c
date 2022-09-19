@@ -12,21 +12,21 @@ void print_to_98(int n)
 		/*if the number is grater than 98*/
 		while (n > 98)
 		{
-			_putchar((n / 10) + '0');
-			_putchar((n % 10) + '0');
+			_putchar(n + '0');
+			_putcahr(',');
+			_putchar(' ');
 			n--;
-			_putchar('\n');
 		}
+		_putchar('\n');
 	}
 	else
 	{
 		/*if number is less than 98*/
 		while (n < 98)
 		{
-			_putchar((n / 10) + '0');
-			_putchar((n % 10) + '0');
+			_putchar(n + '0');
 			n++;
-			_putchar('\n');
 		}
+		_putchar('\n');
 	}
 }
