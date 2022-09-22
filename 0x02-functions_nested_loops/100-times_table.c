@@ -9,38 +9,41 @@ void print_times_table(int n)
 	/*i for the numbers multipled j for the multiplication under i*/
 	int i, j;
 
-	if (n > 15 && n < 0)
+	if (n < 15 && n > 0)
 	{
-		continue;
-	}else
-	{
-		i = 0;
-		while (i <= 9)
+		for (i = 0; i <= n; i++)
 		{
-			_putchar('0');
-			j = 1;
-			while (j <= 9)
+			for (j = 0; j <= 12; j++)
 			{
-				int multiplication = i * j;
-
-				_putchar(',');
-				_putchar(' ');
-				/*this if block takes the product and split into two*/
-				/*print the first part(tens) by dividing by 10*/
-				/*after the if block using modulus u print the second digit*/
-				if (multiplication <= 9)
+				int prod = i * j;
+				/*for product greater than or equal to 10*/
+				if (prod >= 10 && prod < 100)
 				{
-					_putchar(' ');
+					_putchar('0' + (prod / 10));
+					_putchar('0' + (prod % 10));
+				}
+				else if (prod > 100)
+				{
+					/*if the product is greater than 100*/
+					_putchar('0' + (prod / 100));
+					/*the tens var gets the middle digit*/
+					int tens = prod / 10;
+					_putchar('0' + (tens % 10));
+					_putchar('0' + (prod % 10));
 				}
 				else
 				{
-					_putchar((multiplication / 10) + '0');
+					/*else just print the product*/
+					_putchar('0' + prod);
 				}
-				_putchar((multiplication % 10) + '0');
-				j++;
+				if (j != 12)
+				{
+					/*if j reaches the last digit it will not print the comma*/
+					_putchar(',');
+				}
+				_putchar(' ');
 			}
 			_putchar('\n');
-			i++;
 		}
 	}
 }
