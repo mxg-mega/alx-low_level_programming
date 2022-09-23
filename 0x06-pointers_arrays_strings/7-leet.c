@@ -13,6 +13,7 @@ char *leet(char *x)
 	while (x[a])
 	{
 		b = 0;
+
 		while (b < 1)
 		{
 			if (x[a] == tr[b] || x[a] - 32 == tr[b])
