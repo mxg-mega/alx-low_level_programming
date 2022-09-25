@@ -5,8 +5,9 @@
 *@b: second number
 *Return: returns prod
 */
-int mul(int a, int b)
+int mul(int, int)
 {
+	int a, b;
 	int prod = a * b;
 
 	return (prod);
