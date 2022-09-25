@@ -3,9 +3,11 @@
 *mul - multiplies two numbers
 *@a: first number
 *@b: second number
-*Return: returns result
+*Return: returns prod
 */
 int mul(int a, int b)
 {
-	return (a * b);
+	int prod = a * b;
+
+	return (prod);
 }
