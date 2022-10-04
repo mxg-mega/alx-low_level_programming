@@ -1,7 +1,8 @@
 #include "main.h"
 /**
 *print_diagonal - a function that prints a diagonal on the teminal
-*@n: entered integer 
+*@n: entered integer
+*
 *Return: no return value
 */
 void print_diagonal(int n)
