@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
 *print_diagonal - a function that prints a diagonal on the teminal
 *@n: entered integer 
@@ -13,18 +12,16 @@ void print_diagonal(int n)
 	{
 		for (i = 0; i < n; i++)
 		{
-			putchar(' ');
+			for (s = 0; s < i; s++)
+			{
+				_putchar(' ');
+			}
 		}
-		putchar('\\');
-		putchar('\n');
+		_putchar('\\');
+		_putchar('\n');
 	}
 	else
 	{
-		putchar('\n');
+		_putchar('\n');
 	}
-}
-int main(void)
-{
-	print_diagonal(5);
-	return (0);
 }
