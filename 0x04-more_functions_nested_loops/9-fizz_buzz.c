@@ -5,7 +5,7 @@
 */
 int main(void)
 {
-	int n, i, j;
+	int n, i;
 
 	n = 100;
 	i = 1;
