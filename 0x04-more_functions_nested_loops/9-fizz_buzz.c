@@ -8,15 +8,25 @@ int main(void)
 	int n, i, j;
 
 	n = 100;
-	i = 0;
+	i = 1;
 	while (i <= n)
 	{
-		if ()
+		if (i % 3 == 0)
 		{
-			putchar((i / 10) + '0');
+			printf("Fizz ");
 		}
-		putchar((i % 10) + '0');
-		putchar(' ');
+		else if (i % 5 == 0)
+		{
+			printf("Buzz ");
+		}
+		else
+		{
+			printf("%d ", i);
+		}
+		if (i == 100)
+		{
+			putchar('\n');
+		}
 		i++;
 	}
 	return (0);
