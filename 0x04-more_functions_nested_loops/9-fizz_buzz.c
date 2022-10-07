@@ -14,23 +14,23 @@ int main(void)
 		if (i % 3 == 0)
 		{
 			printf("Fizz");
+			putchar(' ');
 			if (i == 100)
-                {
-                        putchar('\n');
-                }
+                	{
+				printf("Fizz");
+                        	putchar('\n');
+                	}
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz");
+			printf(" Buzz");
+			putchar(' ');
 		}
 		else
 		{
 			printf("%d", i);
+			putchar(' ');
 		}
-		/*if (i == 100)
-		{
-			putchar('\n');
-		}*/
 		i++;
 	}
 	return (0);
