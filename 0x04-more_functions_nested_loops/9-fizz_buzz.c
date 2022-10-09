@@ -9,7 +9,7 @@ int main(void)
 
 	n = 100;
 	i = 1;
-	while (i <= n)
+	while (i < n)
 	{
 		if (i % 3 == 0)
 		{
