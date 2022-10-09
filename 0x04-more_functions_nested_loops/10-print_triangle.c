@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  *print_triangle - function prints a triangle
  *@size: size of the triangle
@@ -18,27 +17,22 @@ void print_triangle(int size)
 			k = size;
 			while (k > i)
 			{
-				putchar(' ');
+				_putchar(' ');
 				k--;
 			}
 			j = 0;
 			while (j < i)
 			{
-				putchar('#');
+				_putchar('#');
 				j++;
 			}
-			putchar('\n');
+			_putchar('\n');
 			i++;
 	}
 	}
 	else if (size == 1)
 	{
-		putchar('#');
-		putchar('\n');
+		_putchar('#');
+		_putchar('\n');
 	}
-}
-int main(void)
-{
-	print_triangle(10);
-	return 0;
 }
