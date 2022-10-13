@@ -5,31 +5,22 @@
 */
 int main(void)
 {
-	int n, i;
+	int i;
 
-	n = 100;
 	i = 1;
-	while (i < n)
+	while (i <= 100)
 	{
 		if (i % 3 == 0)
 		{
-			printf("Fizz");
-			putchar(' ');
-			if (i == 100)
-                	{
-				printf("Fizz");
-                        	putchar('\n');
-                	}
+			printf("Fizz\t");
 		}
 		else if (i % 5 == 0)
 		{
-			printf("Buzz");
-			putchar(' ');
+			printf("Buzz\t");
 		}
 		else
 		{
-			printf("%d", i);
-			putchar(' ');
+			printf("%d\t", i);
 		}
 		i++;
 	}
