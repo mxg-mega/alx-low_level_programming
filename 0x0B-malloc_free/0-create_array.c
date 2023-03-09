@@ -11,7 +11,7 @@ char *create_array(unsigned int size, char c)
 {
 	char *str;
 
-	if (size < 1 && isdigit(c))
+	if (size < 1)
 	{
 		return (NULL);
 	}
