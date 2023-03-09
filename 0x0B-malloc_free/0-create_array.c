@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 /**
 *create_array - this funtion creates an array
 *@size: size of the array to be created
@@ -11,14 +12,14 @@ char *create_array(unsigned int size, char c)
 {
 	char *str;
 
-	if (size < 1)
-	{
-		return (NULL);
-	}
-	else if ()
+	if (isalpha(c) && size > 0)
 	{
 		str = malloc(sizeof(char) * size);
 		str[0] = c;
 		return (str);
+	}
+	else
+	{
+		return (NULL);
 	}
 }
