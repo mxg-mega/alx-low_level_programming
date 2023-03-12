@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 /**
 *_strdup - this function creates a memory location pointing to its argument
 *@str: the string to be pointed to
@@ -9,15 +10,18 @@
 char *_strdup(char *str)
 {
 	char *dup;
+	int i, l;
 
-	dup = malloc(sizeof(str));
+	l = strlen(str);
+	dup = malloc(sizeof(char) * l);
 	if (str == NULL)
 	{
 		return (NULL);
 	}
 	else
 	{
-		dup[0] = str[0];
+		for(i = 0; i < l; i++)
+			dup[i] = str[i];
 		return (dup);
 	}
 
