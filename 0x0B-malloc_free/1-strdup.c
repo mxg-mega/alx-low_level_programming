@@ -9,12 +9,12 @@
 */
 char *_strdup(char *str)
 {
-	char dpl[];
 	char *dup;
+	char dpl[strlen(str)];
 	int i, l;
 
 	l = strlen(str);
-	dup = malloc(sizeof(char) * l);
+	dup = malloc(sizeof(char) * (l + 1));
 	if (str == NULL)
 	{
 		return (NULL);
@@ -23,7 +23,7 @@ char *_strdup(char *str)
 	{
 		for (i = 0; i < l; i++)
 			dpl[i] = str[i];
-		dup = dpl;
+		dup = &dpl;
 		return (dup);
 	}
 
