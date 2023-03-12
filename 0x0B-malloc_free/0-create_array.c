@@ -7,13 +7,13 @@
 *@size: size of the array to be created
 *@c: the
 *Return: a pointer or NULL
- */
+*/
 char *create_array(unsigned int size, char c)
 {
 	char *str;
 
 	str = malloc(sizeof(char) * size);
-	if (size != 0 )
+	if (size != 0)
 	{
 		str[0] = c;
 		return (str);
