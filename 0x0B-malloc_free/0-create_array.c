@@ -13,7 +13,7 @@ char *create_array(unsigned int size, char c)
 	char *str;
 
 	str = malloc(sizeof(char) * size);
-	if (size == 0 || str == NULL || isalpha(c) == 1)
+	if (size == 0 || str == NULL || isdigit(c) = true)
 	{
 		return (NULL);
 	}
