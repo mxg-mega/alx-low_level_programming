@@ -9,7 +9,7 @@
 */
 char *_strdup(char *str)
 {
-	char dpl;
+	char dpl[];
 	char *dup;
 	int i, l;
 
