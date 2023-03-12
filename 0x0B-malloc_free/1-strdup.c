@@ -10,7 +10,6 @@
 char *_strdup(char *str)
 {
 	char *dup;
-	char dpl[strlen(str)];
 	int i, l;
 
 	l = strlen(str);
@@ -22,8 +21,7 @@ char *_strdup(char *str)
 	else
 	{
 		for (i = 0; i < l; i++)
-			dpl[i] = str[i];
-		dup = &dpl;
+			dup[i] = str[i];
 		return (dup);
 	}
 
