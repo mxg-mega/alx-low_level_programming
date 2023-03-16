@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
 #include "main.h"
 /**
@@ -12,7 +11,7 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *conc;
-	int l1, l2;
+	int l1, l2, i;
 
 	l1 = strlen(s1);
 	l2 = strlen(s2);
@@ -23,7 +22,12 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		conc = strcat(*s1, *s2);
+		for (i = 0; i < l1; i++)
+			conc[i] = s1[i];
+		conc[l1 + 1] = ' ';
+		for (i = 0; i  < l2; i++)
+			conc[l1 + i] = s2[i];
+		conc[l1 + l2 + 1] = '\0';
 		return (conc);
 	}
 
