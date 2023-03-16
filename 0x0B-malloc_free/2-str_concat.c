@@ -17,26 +17,9 @@ char *str_concat(char *s1, char *s2)
 	l1 = strlen(s1);
 	l2 = strlen(s2);
 	conc = malloc(sizeof(char) * (l1 + l2 + 1));
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL && s2 == NULL)
 	{
-		if (s1 == NULL)
-		{
-			for (i = 0; i < l2; i++)
-				conc[i] = s2[i];
-			conc[strlen(conc) + 1] = '\0';
-			return (conc);
-		}
-		else if (s2 == NULL)
-		{
-			for (i = 0; i < l1; i++)
-				conc[i] = s1[i];
-			conc[strlen(conc) + 1] = '\0';
-			return (conc);
-		}
-		else
-		{
-			return (NULL);
-		}
+		return (NULL);
 	}
 	else
 	{
