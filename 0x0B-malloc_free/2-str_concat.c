@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "main.h"
 /**
 *str_concat - this function concatenates two strings
@@ -23,10 +24,14 @@ char *str_concat(char *s1, char *s2)
 	else
 	{
 		for (i = 0; i < l1; i++)
+		{
 			conc[i] = s1[i];
+		}
 		conc[l1 + 1] = ' ';
 		for (i = 0; i  < l2; i++)
+		{
 			conc[l1 + i] = s2[i];
+		}
 		conc[l1 + l2 + 1] = '\0';
 		return (conc);
 	}
