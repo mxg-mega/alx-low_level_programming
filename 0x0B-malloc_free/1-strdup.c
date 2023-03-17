@@ -18,12 +18,15 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+	else if (str == NULL)
+	{
+		return (NULL);
+	}
 	else
 	{
 		for (i = 0; str[i] != '\0'; i++)
 			dup[i] = str[i];
+		dup[i] = '\0';
+		return (dup);
 	}
-	dup[i] = '\0';
-	return (dup);
-
 }
