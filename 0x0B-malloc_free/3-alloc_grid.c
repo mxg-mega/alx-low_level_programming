@@ -11,15 +11,18 @@
 int **alloc_grid(int width, int height)
 {
 	int **td_array;
+	unsigned int size;
 
-	td_array = malloc(sizeof(int) * (width * height));
+	size = width * height;
+	td_array = malloc(sizeof(int) * (size));
 	if (td_array == NULL || width < 1 || height < 1)
 	{
+		free();
 		return (NULL);
 	}
 	else
 	{
-		int i,j;
+		int i, j;
 
 		for (i = 0; i < width; i++)
 		{
