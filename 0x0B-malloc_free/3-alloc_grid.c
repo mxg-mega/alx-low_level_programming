@@ -24,7 +24,6 @@ int **alloc_grid(int width, int height)
 
 		for (i = 0; i < width; i++)
 		{
-			td_array[i] = 0;
 			for (j = 0; j < height; j++)
 			{
 				td_array[i][j] = 0;
