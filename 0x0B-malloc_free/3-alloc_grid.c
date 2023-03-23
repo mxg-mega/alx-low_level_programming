@@ -29,7 +29,7 @@ int **alloc_grid(int width, int height)
 
 		for (j = 0; j < height; j++)
 		{
-			td_arrray[j] = malloc(sizeof(int) * width);
+			td_array[j] = malloc(sizeof(int) * width);
 			for (k = 0; k < width; k++)
 				td_array[j][k] = 0;
 		}
