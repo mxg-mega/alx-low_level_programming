@@ -15,12 +15,10 @@ int **alloc_grid(int width, int height)
 	td_array = malloc(sizeof(int) * height);
 	if (td_array == NULL)
 	{
-		free(td_array);
 		return (NULL);
 	}
 	else if (width <= 0 || height <= 0)
 	{
-		free(td_array);
 		return (NULL);
 	}
 	else
@@ -35,7 +33,6 @@ int **alloc_grid(int width, int height)
 				td_array[j] = malloc(sizeof(int) * width);
 				if (td_array == NULL)
 				{
-					free(td_array[j]);
 					return (NULL);
 				}
 				else
