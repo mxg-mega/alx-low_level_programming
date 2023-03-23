@@ -20,19 +20,16 @@ int **alloc_grid(int width, int height)
 	}
 	else if (width <= 0 || height <= 0)
 	{
+		free(td_array);
 		return (NULL);
 	}
 	else
 	{
 		int i, j, k;
 
-		for (i = 0; i < height; i++)
-		{
-			td_array[i] = malloc(sizeof(int) * width);
-		}
 		for (j = 0; j < height; j++)
 		{
-			td_array[i] = 0;
+			td_arrray[j] = malloc(sizeof(int) * width);
 			for (k = 0; k < width; k++)
 				td_array[j][k] = 0;
 		}
