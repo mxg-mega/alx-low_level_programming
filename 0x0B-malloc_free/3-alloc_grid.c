@@ -32,8 +32,9 @@ int **alloc_grid(int width, int height)
 			{
 				/*allocation of memory before assignment*/
 				td_array[j] = malloc(sizeof(int) * width);
-				if (td_array == NULL)
+				if (td_array[j] == NULL)
 				{
+					free(td_array[j]);
 					return (NULL);
 				}
 				else
