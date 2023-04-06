@@ -10,39 +10,27 @@
 */
 int **alloc_grid(int width, int height)
 {
-	int **td_array;
+	int **mee;
+	int x, y;
 
-	td_array = malloc(height);
-	if (td_array == NULL)
-	{
-		free(td_array);
-		return (NULL);
-	}
-	else if (width <= 0 || height <= 0)
+	if (width <= 0 || height <= 0)
 	{
 		return (NULL);
 	}
-	else
+	if (mee == NULL)
 	{
-		int j, k;
-
-		for (j = 0; j < height; j++)
+		return (NULL);
+	}
+	for (x = 0; x < height; x++)
+	{
+		mee[x] = malloc(sizeof(int) * width);
+		if (mee[x] == NULL)
 		{
-			for (k = 0; k < width; k++)
+			for (; x >= 0; x--)
 			{
-				/*allocation of memory before assignment*/
-				td_array[j] = malloc(sizeof(int) * width);
-				if (td_array[j] == NULL)
-				{
-					free(td_array[j]);
-					return (NULL);
-				}
-				else
-				{
-					td_array[j][k] = 0;
-				}
+				free(mee[x]);
 			}
+			free(mee);
+			return (NULL);
 		}
-		return (td_array);
-	}
 }
