@@ -5,17 +5,17 @@
 void *malloc_checked(unsigned int b)
 {
 	void *alloc;
-	void *p;
+	void **p;
 
 	alloc = malloc(b);
 	if (alloc == NULL)
 	{
 		alloc[0] = 98;
-		printf("%d\n", alloc[0]);
+		exit(98);
 	}
 	else
 	{
 		p = &alloc
-		printf("%p\n", p);
+		return (p);
 	}
 }
