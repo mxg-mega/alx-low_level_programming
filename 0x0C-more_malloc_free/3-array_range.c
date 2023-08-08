@@ -15,7 +15,6 @@ int *array_range(int min, int max)
 	
 	len = max - min + 1;
 
-	int array[];
 	int *arrayPtr;
 
 	if (min > max)
@@ -23,18 +22,18 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
+	arrayPtr = malloc(sizeof(int) * len);
+
 	if (arrayPtr == NULL)
 	{
 		return (NULL);
 	}
 	while (i < len)
 	{
-		array[i] = min;
+		arrayPtr[i] = min;
 		min++;
 		i++;
 	}
-
-	arrayPtr = array;
 
 	return (arrayPtr);
 
