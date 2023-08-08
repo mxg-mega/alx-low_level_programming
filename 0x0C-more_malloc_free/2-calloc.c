@@ -3,11 +3,12 @@
 #include <stdlib.h>
 
 /**
-*_calloc - this function allocates memory for an array using malloc
-*@nmemb: elements for allocation
-*@size: size of memory to allocate
-*Return - no return value
-*/
+  * _calloc - this function allocates memory for an array using malloc
+  * @nmemb: elements for allocation
+  * @size: size of memory to allocate
+  *
+  * Return - no return value
+  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	int i = 0, l = 0;
