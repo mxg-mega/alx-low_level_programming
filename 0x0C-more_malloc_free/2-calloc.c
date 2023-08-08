@@ -9,7 +9,7 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	unsigned int i;
+	size_t i;
 	unsigned int *array;
 
 	array = malloc(sizeof(size) * nmemb);
@@ -23,7 +23,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 	for (i = 0; i < nmemb; i++)
 	{
-		array [i] = 0;
+		array[i] = 0;
 	}
 	return (array);
 }
