@@ -23,8 +23,6 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	arrayPtr = &array;
-
 	if (arrayPtr == NULL)
 	{
 		return (NULL);
@@ -35,6 +33,8 @@ int *array_range(int min, int max)
 		min++;
 		i++;
 	}
+
+	arrayPtr = array;
 
 	return (arrayPtr);
 
