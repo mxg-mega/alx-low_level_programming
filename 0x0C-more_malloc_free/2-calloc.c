@@ -9,10 +9,11 @@
 */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
-	int i;
+	int i, l;
 	char *array;
 
-	array = malloc(size * nmemb);
+	l = size * nmemb;
+	array = malloc(l);
 
 	if (array == NULL)
 	{
