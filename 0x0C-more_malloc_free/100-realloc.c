@@ -5,8 +5,8 @@
 /**
  * _realloc - this function
  * @ptr: a pointer
- * @old_size:
- * @new_size:
+ * @old_size: old pointer size in bytes
+ * @new_size: the new pointer size in bytes
  *
  *Return: Nothing
  */
@@ -15,10 +15,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *new_ptr;
 	unsigned int i;
 
-	if (new_size > old_size)
-	{
-		return (NULL);
-	}
 	if (new_size == old_size)
 	{
 		return (ptr);
@@ -34,10 +30,13 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 
 		return (new_ptr);
 	}
-	if (new_size == 0 && ptr != NULL)
+	else
 	{
-		free(ptr);
-		return (NULL);
+		if (new_size == 0)
+		{
+			free(ptr);
+			return (NULL);
+		}
 	}
 
 	new_ptr = malloc(new_size);
@@ -47,12 +46,9 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 		return (NULL);
 	}
 
-	i = 0;
-
-	while (i < old_size && i < new_size)
+	for (i = 0; i < old_size && i < new_size; i++)
 	{
 		new_ptr[i] = ((char *) ptr)[i];
-		i++;
 	}
 
 	free(ptr);
