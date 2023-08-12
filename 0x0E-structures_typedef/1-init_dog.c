@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "main.h"
 #include "dog.h"
 
 /**
@@ -13,11 +12,11 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog *initializer;
+	struct dog **initializer;
 
 	initializer = &d;
 
-	initializer->name = name;
-	initializer->age = age;
-	initializer->owner = owner;
+	(**initializer).name = name;
+	(**initializer).age = age;
+	(**initializer).owner = owner;
 }
