@@ -13,16 +13,11 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
-	struct dog initializer;
+	struct dog *initializer;
 
-	initializer = malloc(sizeof(struct dog d));
+	initializer = &d;
 
-	if (initializer == NULL)
-	{
-		return (NULL);
-	}
-
-	d->name = name;
-	d->age = age;
-	d->owner = owner;
+	initializer->name = name;
+	initializer->age = age;
+	initializer->owner = owner;
 }
