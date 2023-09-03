@@ -10,6 +10,9 @@ void print_name(char *name, void (*f)(char *))
 	char *str_ptr;
 	void (*func_ptr)(char *) = f;
 
+	if (name == NULL || f == NULL)
+		return;
+	
 	str_ptr = name;
 	func_ptr(str_ptr);
 }
