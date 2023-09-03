@@ -2,18 +2,15 @@
 
 /**
   * print_name - contains function pointers to print a string
+  * @name: string to add
+  * @f: pointer to function
   *
   * Return: Nothing
   */
 void print_name(char *name, void (*f)(char *))
 {
-	char *str_ptr;
-	void (*func_ptr)(char *) = f;
-
 	if (name == NULL || f == NULL)
-		return;
-	
-	str_ptr = name;
-	func_ptr(str_ptr);
+		return;	
+	f(name);
 }
 
