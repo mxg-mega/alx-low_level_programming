@@ -1,13 +1,13 @@
 #include <stdio.h>
 
 /**
- * main - entry point this program displays the file directory
+ * main - entry point
  *
  * Return: nothing
  */
 int main()
 {
-	printf("%s\n", __FILE__);
+	printf("%s \n", __FILE__);
 	return (0);
 }
 
