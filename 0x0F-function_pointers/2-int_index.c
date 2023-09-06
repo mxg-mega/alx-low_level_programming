@@ -13,12 +13,12 @@ int int_index(int *array, int size, int (*cmp)(int))
 {
 	int i, rtn, func_rtn;
 
-	if (size <= 0)
+	if (size <= 0 || array == NULL || cmp == NULL)
 	{
 		return (-1);
 	}
 	i = 0;
-	while (i <= size)
+	while (i < size)
 	{
 		rtn = cmp(array[i]);
 		if (rtn == 0)
