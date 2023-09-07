@@ -17,21 +17,14 @@ int int_index(int *array, int size, int (*cmp)(int))
 	{
 		return (-1);
 	}
-	i = 0;
-	while (i < size)
+	for (i = 0; i < size; i++)
 	{
 		rtn = cmp(array[i]);
-		if (i == (size - 1))
-		{
-			func_rtn = -1;
-			break;
-		}
-		else
+		if (rtn != 0)
 		{
 			func_rtn = i;
 			break;
 		}
-		i++;
 	}
 	return (func_rtn);
 }
