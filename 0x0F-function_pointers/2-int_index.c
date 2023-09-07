@@ -21,11 +21,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 	while (i < size)
 	{
 		rtn = cmp(array[i]);
-		if (rtn == 0)
-		{
-			i++;
-		}
-		else if (i == (size - 1))
+		if (i == (size - 1))
 		{
 			func_rtn = -1;
 			break;
@@ -35,6 +31,7 @@ int int_index(int *array, int size, int (*cmp)(int))
 			func_rtn = i;
 			break;
 		}
+		i++;
 	}
 	return (func_rtn);
 }
