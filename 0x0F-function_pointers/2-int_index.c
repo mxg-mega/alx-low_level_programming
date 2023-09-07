@@ -20,12 +20,13 @@ int int_index(int *array, int size, int (*cmp)(int))
 	for (i = 0; i < size; i++)
 	{
 		rtn = cmp(array[i]);
-		if (rtn != 0)
+		if (rtn)
 		{
 			func_rtn = i;
-			break;
+			return (func_rtn);
 		}
 	}
+	func_rtn = -1;
 	return (func_rtn);
 }
 
