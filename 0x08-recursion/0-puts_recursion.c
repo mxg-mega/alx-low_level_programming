@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * _puts_recursion - using recursion to print chars
@@ -8,13 +9,13 @@
  */
 void _puts_recursion(char *s)
 {
-	int i;
-
-	i = 0;
-	if (s[i] != '\0')
+	if (*s == '\0')
 	{
-		_putchar(s[i]);
-		i++;
-		_puts_recursion(s);
+		putchar('\n');
+	}
+	else
+	{
+		putchar(*s);
+		_puts_recursion(s + 1);
 	}
 }
