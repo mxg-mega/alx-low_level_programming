@@ -8,7 +8,8 @@
 */
 int _sqrt_recursion(int n)
 {
-	int start;
+	int start, end;
+
 	if (n < 0)
 	{
         	return (-1);
@@ -19,15 +20,14 @@ int _sqrt_recursion(int n)
         	return (n);
     	}
 
-	int end;
-
 	start = 0;
 	end = 0;
 	while (start <= end)
 	{
-        	int mid = start + (end - start) / 2;
-        	int sqr = mid * mid;
+        	int mid, sqr;
 
+		mid = start + (end - start) / 2;
+		sqr = mid * mid;
         	if (sqr == n)
 		{
             		return (mid);
