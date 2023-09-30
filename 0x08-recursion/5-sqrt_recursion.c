@@ -8,39 +8,25 @@
 */
 int _sqrt_recursion(int n)
 {
-	int start, end;
-
 	if (n < 0)
 	{
-        	return (-1);
-    	}
-
-	if (n == 0 || n == 1)
+    		return (-1);
+  	}
+	else if (n == 0 || n == 1)
 	{
-        	return (n);
-    	}
-
-	start = 0;
-	end = n;
-	while (start <= end)
+    		return (n);
+  	}
+	else
 	{
-        	int mid, sqr;
-
-		mid = start + (end - start) / 2;
-		sqr = mid * mid;
-        	if (sqr == n)
+    		int mid = (n / 2) + (n % 2);
+    		int sqrt = _sqrt_recursion(n - (mid * mid));
+    		if (sqrt == -1)
 		{
-            		return (mid);
-        	}
-
-	        if (sqr < n)
-		{
-        	    start = mid + 1;
-	        }
+      			return -1;
+    		}
 		else
 		{
-	            end = mid - 1;
-        	}
-    	}
-    	return (-1);
+      			return mid + sqrt;
+    		}
+  	}
 }
