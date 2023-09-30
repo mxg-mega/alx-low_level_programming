@@ -22,6 +22,6 @@ int is_prime_number(int n)
 	}
 	else
 	{
-	return is_prime_number(n / 2 + 1);
+	return (is_prime_number(n / 2 + 1));
 	}
 }
