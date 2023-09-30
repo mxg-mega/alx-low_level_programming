@@ -22,11 +22,11 @@ int _sqrt_recursion(int n)
     		int sqrt = _sqrt_recursion(n - (mid * mid));
     		if (sqrt == -1)
 		{
-      			return -1;
+      			return (-1);
     		}
 		else
 		{
-      			return mid + sqrt;
+      			return (mid + sqrt);
     		}
   	}
 }
