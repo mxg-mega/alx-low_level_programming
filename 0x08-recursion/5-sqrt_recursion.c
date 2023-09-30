@@ -42,6 +42,5 @@ int _sqrt_recursion(int n)
 	            end = mid - 1;
         	}
     	}
-
-    return (-1);
+    	return (-1);
 }
