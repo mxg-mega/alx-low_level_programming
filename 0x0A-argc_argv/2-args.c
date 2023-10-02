@@ -2,10 +2,10 @@
 #include "main.h"
 
 /**
-  * main - entry point
+  * main - prints the arguments
   * @argc: number of arguments
-  * @argv array of arguments
-  *Return: always 0
+  * @argv: array of arguments
+  * Return: always 0
   */
 int main(int argc, char *argv[])
 {
