@@ -1,0 +1,2 @@
+#!/bin/bash
+touch $1 $2 $3 $4 $5; chmod u+x $1 $2 $3 $4 $5; vi $1
