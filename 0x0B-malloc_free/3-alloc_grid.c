@@ -27,10 +27,6 @@ int **alloc_grid(int width, int height)
 	{
 		int *w_array;
 
-		if (w_array == NULL)
-		{
-			return (NULL);
-		}
 		for (j = 0; j < width; j++)
 		{
 			w_array[j] = 0;
