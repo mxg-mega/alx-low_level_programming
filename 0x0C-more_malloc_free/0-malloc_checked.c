@@ -9,7 +9,7 @@
   */
 void *malloc_checked(unsigned int b)
 {
-	int *n_mem = malloc(b);
+	void *n_mem = malloc(b);
 	if (n_mem == NULL)
 	{
 		free(n_mem);
