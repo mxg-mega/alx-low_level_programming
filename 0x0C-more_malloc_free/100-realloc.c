@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
-  * _realloc
+  * _realloc - function reallocates the size of an existing memory
   * @ptr: pointer memory/array
   * @old_size: old memory size
   * @new_size: new memory size
