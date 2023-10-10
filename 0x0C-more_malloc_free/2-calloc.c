@@ -3,8 +3,7 @@
 #include "main.h"
 
 /**
-  * _calloc - this function creates
-  *		a memory of a particular size for an array
+  * _calloc - this function creates a memory of a particular size for an array
   * @nmemb: number of element
   * @size: size of array
   * Return: a void pointer
@@ -12,6 +11,7 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *mem;
+	int i;
 
 	if (nmemb == 0 || size == 0)
 	{
@@ -22,6 +22,11 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	if (mem == NULL)
 	{
 		return (NULL);
+	}
+
+	for (i = 0; i < nmemb; i++)
+	{
+		mem[i] = 0;
 	}
 
 	return (mem);
