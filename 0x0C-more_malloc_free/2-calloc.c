@@ -26,9 +26,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	}
 
 	array_set = mem;
-	for (i = 0; i < nmemb; i++)
+	for (i = 0; i < (size * nmemb); i++)
 	{
-		array_set[i] = 0;
+		array_set[i] = '\0';
 	}
 
 	return (array_set);
