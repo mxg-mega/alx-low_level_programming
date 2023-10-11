@@ -49,6 +49,7 @@ void print(char *str)
 		_putchar(str[i]);
 	}
 }
+
 /**
   * _mul - funtion that process the multiplication
   * @num1: first num
@@ -71,7 +72,7 @@ int main(int argc, char *argv[])
 {
 	int num1, num2, product;
 
-	if (argc < 3 || argc > 3)
+	if (argc != 3)
 	{
 		print("Error\n");
 		exit(98);
@@ -92,10 +93,8 @@ int main(int argc, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[2]);
 	product = _mul(num1, num2);
-
 	print_int(product);
 	_putchar('\n');
-
 	return (0);
 }
 
