@@ -8,10 +8,5 @@
   */
 void print_dog(struct dog *d)
 {
-	struct dog dog_n;
-
-	dog_n.name = d->name;
-	dog_n.age = d->age;
-	dog_n.owner = d->owner;
-	printf("Name: %s\nAge: %f\nOwner: %s\n", dog_n.name, dog_n.age, dog_n.owner);
+	printf("Name: %s\nAge: %f\nOwner: %s\n", d->name, d->age, d->owner);
 }
