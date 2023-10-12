@@ -1,0 +1,2 @@
+#!/bin/bash
+betty-style "$1"; betty-doc "$1"
