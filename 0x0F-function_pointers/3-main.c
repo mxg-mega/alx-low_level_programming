@@ -4,6 +4,8 @@
 
 /**
   * main - entry point
+  * @argc: number of arguments
+  * @argv: array of arguments
   *
   * Return: always 0 except if fail exit status 98
   */
