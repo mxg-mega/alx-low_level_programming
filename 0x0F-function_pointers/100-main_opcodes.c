@@ -8,12 +8,13 @@
 void printOpcodes(int numBytes)
 {
 	unsigned char *mainAddr = (unsigned char *)printOpcodes;
+	int i;
 
-	for (int i = 0; i < numBytes; i++)
+	for (i = 0; i < numBytes; i++)
 	{
 		if (i > 0)
 		{
-			printf(" "); // Separate opcodes with a space
+			printf(" ");
 		}
 		printf("%02x", mainAddr[i]);
 	}
