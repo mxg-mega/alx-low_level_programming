@@ -1,9 +1,10 @@
 #include "variadic_functions.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdarg.h>
 
 /**
- * print_number - function prints the passed integers
+ * print_numbers - function prints the passed integers
  * @separator: character to separate the ints
  * @n: number of arguments
  *
@@ -14,7 +15,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i;
 	va_list args;
 
-	if (separator == NULL)
+	if (separator == NULL || n == 0)
 	{
 		return;
 	}
