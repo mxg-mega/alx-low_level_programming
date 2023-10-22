@@ -10,41 +10,51 @@
 void print_all(const char * const format, ...)
 {
 	va_list args;
+	const char *format_copy = format;
 	char *separator = "";
+	int printed = 0;
 
 	va_start(args, format);
-	while (format && *format)
-	{
-		if (*format == 'c')
-		{
-			printf("%s%c", separator, va_arg(args, int));
-		}
-		else if (*format == 'i')
-		{
-			printf("%s%d", separator, va_arg(args, int));
-		}
-		else if (*format == 'f')
-		{
-			printf("%s%f", separator, (float)va_arg(args, double));
-		}
-		else if (*format == 's')
-		{
-			char *str;
 
-			str = va_arg(args, char *);
-			if (str == NULL)
-			{
-				printf("%s(nil)", separator);
-			}
-			else
-			{
-				printf("%s%s", separator, str);
-			}
-		}
-		separator = ", ";
-		format++;
-	}
+    while (format_copy && *format_copy)
+    {
+        if (*format_copy == 'c')
+        {
+            printf("%s%c", separator, va_arg(args, int));
+            printed = 1;
+        }
+        else if (*format_copy == 'i')
+        {
+            printf("%s%d", separator, va_arg(args, int));
+            printed = 1;
+        }
+        else if (*format_copy == 'f')
+        {
+            printf("%s%f", separator, (float)va_arg(args, double));
+            printed = 1;
+        }
+        else if (*format_copy == 's')
+        {
+            char *str = va_arg(args, char *);
+            if (str == NULL)
+            {
+                printf("%s(nil)", separator);
+            }
+            else
+            {
+                printf("%s%s", separator, str);
+            }
+            printed = 1;
+        }
 
+        if (printed)
+        {
+            separator = ", ";
+            printed = 0;
+        }
+
+        format_copy++;
+    }
 	printf("\n");
 	va_end(args);
 }
