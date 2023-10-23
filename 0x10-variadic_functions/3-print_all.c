@@ -1,95 +1,49 @@
-#include "variadic_functions.h"
 #include <stdio.h>
 #include <stdarg.h>
-
-
-/**
- * print_char - Print a char.
- * @args: Argument list.
- */
-void print_char(va_list args)
-{
-	printf("%c", va_arg(args, int));
-}
+#include "variadic_functions.h"
 
 /**
- * print_int - Print an int.
- * @args: Argument list.
- */
-void print_int(va_list args)
-{
-	printf("%d", va_arg(args, int));
-}
-
-/**
- * print_float - Print a float.
- * @args: Argument list.
- */
-void print_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
-}
-
-/**
- * print_string - Print a string.
- * @args: Argument list.
- */
-void print_string(va_list args)
-{
-	char *str = va_arg(args, char *);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-	}
-	else
-	{
-		printf("%s", str);
-	}
-}
-
-/**
- * print_all - Print various data types based on a format string.
- * @format: A format string indicating data types.
- * @...: Variable number of arguments corresponding to the format.
+ * print_all - prints anything based on format string
+ * @format: a string containing format specifiers
+ * @...: variable number of arguments
  */
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	const int varNum = 9;
-	int i, j, n;
+	char *sep = "";
+	unsigned int i = 0;
 
-	specifier_t specs[] = {
-		{'c', print_char},
-		{'i', print_int},
-		{'f', print_float},
-		{'s', print_string},
-	};
-
-	i = 0;
-	n = 0;
 	va_start(args, format);
-	while (format && format[i] && n < varNum)
+
+	while (format && format[i])
 	{
-		j = 0;
-		while (j < 4)
+		switch (format[i])
 		{
-			if (format[i] == specs[j].spe)
-			{
-				specs[j].f(args);
-				if (format[i + 1])
-				{
-					printf(", ");
-				}
-				n++;
+			case 'c':
+				printf("%s%c", sep, va_arg(args, int));
 				break;
-			}
-			j++;
+			case 'i':
+				printf("%s%d", sep, va_arg(args, int));
+				break;
+			case 'f':
+				printf("%s%f", sep, va_arg(args, double));
+				break;
+			case 's':
+				{
+					char *str = va_arg(args, char *);
+
+					if (str == NULL)
+						str = "(nil)";
+					printf("%s%s", sep, str);
+				}
+				break;
+			default:
+				i++;
+				continue;
 		}
+		sep = ", ";
 		i++;
 	}
-
 	printf("\n");
 	va_end(args);
 }
-
