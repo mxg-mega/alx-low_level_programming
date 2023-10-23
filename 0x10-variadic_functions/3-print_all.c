@@ -3,12 +3,6 @@
 #include <stdarg.h>
 
 
-typedef struct specifier
-{
-	char spe;
-	void (*f)(va_list args);
-} specifier_t;
-
 /**
  * print_char - Print a char.
  * @args: Argument list.
@@ -43,6 +37,7 @@ void print_float(va_list args)
 void print_string(va_list args)
 {
 	char *str = va_arg(args, char *);
+
 	if (str == NULL)
 		printf("(nil)");
 	else
@@ -58,17 +53,16 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i, j;
-	specifier_t specs = {
+
+	specifier_t specs[] = {
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
 		{'s', print_string}
 	};
 
-
 	i = 0;
 	va_start(args, format);
-
 	while (format && format[i])
 	{
 		j = 0;
@@ -78,14 +72,15 @@ void print_all(const char * const format, ...)
 			{
 				specs[j].f(args);
 				if (format[i + 1])
+				{
 					printf(", ");
-				break;
+					break;
+				}
+				j++;
 			}
-			j++;
+			i++;
 		}
-		i++;
-	}
-
+`
 	printf("\n");
 	va_end(args);
 }
