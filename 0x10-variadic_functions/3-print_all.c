@@ -58,7 +58,7 @@ void print_all(const char * const format, ...)
 		{'c', print_char},
 		{'i', print_int},
 		{'f', print_float},
-		{'s', print_string}
+		{'s', print_string},
 	};
 
 	i = 0;
@@ -74,13 +74,14 @@ void print_all(const char * const format, ...)
 				if (format[i + 1])
 				{
 					printf(", ");
-					break;
 				}
-				j++;
+				break;
 			}
-			i++;
+			j++;
 		}
-`
+		i++;
+	}
+
 	printf("\n");
 	va_end(args);
 }
