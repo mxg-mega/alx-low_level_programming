@@ -52,7 +52,8 @@ void print_string(va_list args)
 void print_all(const char * const format, ...)
 {
 	va_list args;
-	int i, j;
+	const int varNum = 9;
+	int i, j, n;
 
 	specifier_t specs[] = {
 		{'c', print_char},
@@ -62,8 +63,9 @@ void print_all(const char * const format, ...)
 	};
 
 	i = 0;
+	n = 0;
 	va_start(args, format);
-	while (format && format[i])
+	while (format && format[i] && n < varNum)
 	{
 		j = 0;
 		while (j < 4)
@@ -75,6 +77,7 @@ void print_all(const char * const format, ...)
 				{
 					printf(", ");
 				}
+				n++;
 				break;
 			}
 			j++;
