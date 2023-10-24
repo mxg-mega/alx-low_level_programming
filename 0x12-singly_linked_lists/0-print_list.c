@@ -9,24 +9,23 @@
  */
 size_t print_list(const list_t *h)
 {
-	list_t *currentNode;
+	const list_t *currentNode;
 	size_t n;
 
 	n = 0;
 	currentNode = h;
 	while (currentNode->next != NULL)
 	{
-		printf("[%d] ", currentNode->len);
 		if (currentNode->str != NULL)
 		{
-			printf("%s", currentNode->str);
+			printf("[%d] %s\n", currentNode->len, currentNode->str);
 		}
 		else
 		{
-			printf("(nil)");
+			printf("[0] (nil)\n");
 		}
 		n++;
-		currentNode = h->next;
+		currentNode = currentNode->next;
 	}
 	return (n);
 }
