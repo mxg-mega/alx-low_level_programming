@@ -14,7 +14,7 @@ size_t print_list(const list_t *h)
 
 	n = 0;
 	currentNode = h;
-	while (currentNode->next != NULL)
+	while (currentNode != NULL)
 	{
 		if (currentNode->str != NULL)
 		{
