@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * print_lists - print the values of a linked list
+ * print_list - print the values of a linked list
  * @h: head struct of the linked list
  * Return: a size_t
  */
