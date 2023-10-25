@@ -18,7 +18,6 @@ list_t *add_node(list_t **head, const char *str)
 	newNode = (list_t *)malloc(sizeof(list_t));
 	if (newNode == NULL)
 	{
-		printf("Failed to allocate memory for the new node.\n");
 		return (NULL);
 	}
 	strCopy = strdup(str);
