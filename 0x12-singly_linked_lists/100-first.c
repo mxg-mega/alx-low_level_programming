@@ -1,21 +1,14 @@
 #include <stdio.h>
-/**
-  * main - entry point
-  * Return: always 0
-  */
-int main(void)
-{
-	print_function();
-	return (0);
-}
+
+void first(void) __attribute__ ((constructor));
 
 /**
-  * print_function - prints a statement
-  * Return: no return
-  */
-void print_function(void)
+  * first - prints a sentence before the main
+  * function is executed.
+*/
+void first(void)
 {
-	printf("You're beat! And yet, you must allow,\n
-I bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\n");
+	printf("I bore my house upon my back!\n");
 }
 
