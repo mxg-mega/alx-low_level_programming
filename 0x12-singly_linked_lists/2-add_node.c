@@ -21,16 +21,9 @@ list_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 	strCopy = strdup(str);
-	if (str == NULL)
-	{
-		printf("[0] nil\n");
-		free(newNode);
-		return (NULL);
-	}
 	len = strlen(strCopy);
 	newNode->str = strCopy;
 	newNode->len = len;
-	newNode->next = NULL;
 
 	newNode->next = *head;
 	*head = newNode;
