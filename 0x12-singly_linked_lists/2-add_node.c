@@ -1,29 +1,40 @@
 #include "lists.h"
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 /**
  * add_node - function adds a node to the list
- *
- *
- * Return:
+ * @head: the head node
+ * @str: the value of str of the added node
+ * Return: pointer to the new head node
  */
 list_t *add_node(list_t **head, const char *str)
 {
-	list_t *newNode = NULL;
+	list_t *newNode;
 	char *strCopy;
+	unsigned int len;
 
-	if (head != NULL)
+	newNode = (list_t *)malloc(sizeof(list_t));
+	if (newNode == NULL)
 	{
-	newNode = malloc(sizeof(list_t));
-	strCopy = strdup(head->str);
-	newNode->str = strcopy;
-	newNode->len = head->len;
-	newNode->next = NULL;
-	newNode->next = head;
+		printf("Failed to allocate memory for the new node.\n");
+		return (NULL);
 	}
-	head = newNode;
+	strCopy = strdup(str);
+	if (str == NULL)
+	{
+		printf("[0] nil\n");
+		free(newNode);
+		return (NULL);
+	}
+	len = strlen(strCopy);
+	newNode->str = strCopy;
+	newNode->len = len;
+	newNode->next = NULL;
 
-	return ();
+	newNode->next = *head;
+	*head = newNode;
+	return (*head);
 }
 
