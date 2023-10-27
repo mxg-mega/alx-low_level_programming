@@ -12,13 +12,15 @@ size_t print_listint_safe(const listint_t *head)
 
 	while (head != NULL)
 	{
+		const listint_t *slow;
+		const listint_t *fast;
+
 		printf("[%p] %d\n", (void *)head, head->n);
 		count++;
 		head = head->next;
 
-		/* Check for a loop by comparing the current address to previous nodes */
-		const listint_t *slow = head, *fast = head;
-
+		slow = head;
+		fast = head;
 		while (fast != NULL && fast->next != NULL)
 		{
 			slow = slow->next;
