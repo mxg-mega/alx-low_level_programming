@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
-  * binary_to_unit - converts binary string to decimal
-  * @:
+  * binary_to_uint - converts binary string to decimal
+  * @b: string of the binary
   *
   * Return: the value in decimal
   */
@@ -11,7 +11,7 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int result;
 	int i;
 
-	if (strlen(b) == 1 && b[0] == '0')
+	if ((strlen(b) == 1 && b[0] == '0') || b == NULL)
 	{
 		result = 0;
 		return (result);
