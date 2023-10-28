@@ -13,8 +13,7 @@ unsigned int binary_to_uint(const char *b)
 
 	if ((strlen(b) == 1 && b[0] == '0') || b == NULL)
 	{
-		result = 0;
-		return (result);
+		return (0);
 	}
 	result = 0;
 	i = 0;
