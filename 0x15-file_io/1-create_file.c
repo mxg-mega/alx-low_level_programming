@@ -6,7 +6,7 @@
   * @filename: name of text file
   * @text_content: content to append to file
   *
-  * Return:
+  * Return: return 1 if success and -1 if failure
   */
 int create_file(const char *filename, char *text_content)
 {
@@ -17,7 +17,7 @@ int create_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	openfile = open(filename, O_RDWR | O_CREAT, 0600);
+	openfile = open(filename, O_RDWR | O_CREAT | O_TRUNC, 0600);
 	if (openfile == -1)
 	{
 		return (-1);
@@ -34,3 +34,4 @@ int create_file(const char *filename, char *text_content)
 	close(openfile);
 	return (1);
 }
+
