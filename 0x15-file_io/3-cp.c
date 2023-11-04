@@ -1,6 +1,23 @@
 #include "main.h"
 
 /**
+ * close_file - Closes file descriptors.
+ * @fd: The file descriptor to be closed.
+ */
+void close_file(int fd)
+{
+	int c;
+
+	c = close(fd);
+
+	if (c < 0)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
+		exit(100);
+	}
+}
+
+/**
   * error - function handles error messages
   * @filename: the error message
   * @status: the exit status
@@ -36,9 +53,9 @@ void error(char *filename, int status)
   */
 int main(int argc, char **argv)
 {
-	char buffer[1024];
-	int openfile1, openfile2, closefile1, closefile2;
-	ssize_t writefile2, readfile1;
+	char *buffer;
+	int openfile1, openfile2, writefile2;
+	ssize_t readfile1;
 
 	if (argc != 3)
 	{
@@ -49,30 +66,37 @@ int main(int argc, char **argv)
 	{
 		error(argv[1], 98);
 	}
-
 	openfile2 = open(argv[2], O_RDWR | O_CREAT | O_TRUNC, 0664);
 	if (openfile2 == -1)
 	{
 		error(argv[2], 99);
 	}
-	readfile1 = read(openfile1, buffer, sizeof(buffer));
-	if (readfile1 == -1)
-	{
-		error(argv[1], 98);
-	}
-	writefile2 = dprintf(openfile2, "%s", buffer);
-	if (writefile2 == -1)
+	buffer = malloc(sizeof(char) * BUFF_SIZE);
+	if (buffer == NULL)
 	{
 		close(openfile1);
 		close(openfile2);
 		error(argv[2], 99);
 	}
-	closefile1 = close(openfile1);
-	closefile2 = close(openfile2);
-	if (closefile1 == -1 || closefile2 == -1)
+	readfile1 = read(openfile1, buffer, BUFF_SIZE);
+	if (readfile1 == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd \n");
-		exit(100);
+		free(buffer);
+		close(openfile1);
+		close(openfile2);
+		error(argv[1], 98);
 	}
+	writefile2 = write(openfile2, buffer, BUFF_SIZE);
+	if (writefile2 == -1)
+	{
+		free(buffer);
+		close(openfile1);
+		close(openfile2);
+		error(argv[2] ,99);
+	}
+
+	free(buffer);
+	close_file(openfile1);
+	close_file(openfile2);
 	return (0);
 }
