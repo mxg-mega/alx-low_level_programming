@@ -45,6 +45,24 @@ void error(char *filename, int status)
 }
 
 /**
+  * failure - called when failuer occurrs
+  * @buffer: frees the buffer
+  * @fd1: closes first file
+  * @fd2: closes second file
+  *
+  * Return: no return
+  */
+void failure(char *buffer, int fd1, int fd2)
+{
+	if (buffer != NULL)
+	{
+		free(buffer);
+	}
+	close_file(fd1);
+	close_file(fd2);
+}
+
+/**
   * main - copies a file from a path to another
   * @argc: number of arguments
   * @argv: arguments array
@@ -59,7 +77,8 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		error(NULL, 97);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
 	openfile1 = open(argv[1], O_RDONLY);
 	if (openfile1 == -1)
@@ -74,29 +93,21 @@ int main(int argc, char **argv)
 	buffer = malloc(sizeof(char) * BUFF_SIZE);
 	if (buffer == NULL)
 	{
-		close(openfile1);
-		close(openfile2);
+		failure(NULL, openfile1, openfile2);
 		error(argv[2], 99);
 	}
 	readfile1 = read(openfile1, buffer, BUFF_SIZE);
 	if (readfile1 == -1)
 	{
-		free(buffer);
-		close(openfile1);
-		close(openfile2);
+		failure(buffer, openfile1, openfile2);
 		error(argv[1], 98);
 	}
 	writefile2 = write(openfile2, buffer, BUFF_SIZE);
 	if (writefile2 == -1)
 	{
-		free(buffer);
-		close(openfile1);
-		close(openfile2);
-		error(argv[2] ,99);
+		failure(buffer, openfile1, openfile2);
+		error(argv[2], 99);
 	}
-
-	free(buffer);
-	close_file(openfile1);
-	close_file(openfile2);
+	failure(buffer, openfile1, openfile2);
 	return (0);
 }
