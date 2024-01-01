@@ -3,7 +3,7 @@
 /**
   * free_dlistint - function frees the linked list
   * @head: the head of the link
-  * 
+  *
   * Return: No return
   */
 void free_dlistint(dlistint_t *head)
