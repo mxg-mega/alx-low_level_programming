@@ -1,5 +1,7 @@
 #include "lists.h"
 
+size_t dlistint_len(const dlistint_t *h);
+
 /**
   * insert_dnodeint_at_index - function inserst a node at an index
   * @h: head node
@@ -57,4 +59,28 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	current->prev = newNode;
 	return (newNode);
 
+}
+
+/**
+  * dlistint_len - counts the nodes on a doubly linked list
+  * @h: the head of the list
+  *
+  * Return: the number of nodes
+  */
+size_t dlistint_len(const dlistint_t *h)
+{
+	int length = 0;
+	const dlistint_t *current = NULL;
+
+	if (h == NULL)
+	{
+		return (0);
+	}
+	current = h;
+	while (current != NULL)
+	{
+		current = current->next;
+		length++;
+	}
+	return (length);
 }
