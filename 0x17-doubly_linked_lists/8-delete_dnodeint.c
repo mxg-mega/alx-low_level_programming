@@ -20,7 +20,6 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	while (current != NULL && tracker < index)
 	{
 		tracker++;
-		printf("tracker %d < index %d\n", tracker, index);
 		current = current->next;
 	}
 	if (current->prev != NULL)
