@@ -4,7 +4,7 @@
 // Function to override srand
 void srand(unsigned int seed) {
     // Set a specific seed for consistent results
-    srand(60);
+    srand(70);
 }
 
 int rand(void) {
