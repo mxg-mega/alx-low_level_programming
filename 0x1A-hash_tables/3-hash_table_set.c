@@ -13,7 +13,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned int index;
 	hash_node_t *new_node = NULL;
 
-	if (ht == NULL || key == NULL || strcmp(key, " ") == 0)
+	if (ht == NULL || key == NULL || strcmp(key, " "))
 	{
 		return (0);
 	}
@@ -23,7 +23,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	}
 
-	printf("\n");
 	new_node->key = NULL;
 	new_node->value = NULL;
 	new_node->next = NULL;
