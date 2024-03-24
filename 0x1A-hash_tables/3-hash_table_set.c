@@ -10,7 +10,7 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned int index;
+	unsigned int index = 0;
 	hash_node_t *new_node = NULL;
 
 	if (ht == NULL || key == NULL || strcmp(key, " ") == 0)
@@ -21,7 +21,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	index = key_index((unsigned char *)key, ht->size);
 	if (ht->array[index] != NULL && strcmp(ht->array[index]->key, key) == 0)
 	{
-		ht->array[index]->value = (char *)value;
+		strcpy(ht->array[index]->value, (char *)value);
 		return (1);
 	}
 
