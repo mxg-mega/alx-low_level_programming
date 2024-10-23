@@ -27,15 +27,16 @@ $(NAME): $(OBJ)
 
 # Clean Object Files, Executable, and Backup Files
 clean:
-	rm -f $(NAME) *~
+	$(RM) $(NAME) *~
 
 # Full Clean: Removes All Object Files
 fclean: clean oclean
 
 # Clean Only Object Files
 oclean:
-	rm -f *.o
-
+	$(RM) *.o
+$(RM):
+	rm -f
 # Rebuild the Project from Scratch
 re: fclean all
 
