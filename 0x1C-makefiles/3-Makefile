@@ -14,9 +14,7 @@ clean:
 oclean:
 	${RM} *.o
 
-fclean:
-	${RM} *~
-	${RM} *.o
+fclean: clean oclean
 
 re: oclean ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
