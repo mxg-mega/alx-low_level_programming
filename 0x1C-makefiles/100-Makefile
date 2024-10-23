@@ -3,14 +3,14 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # Source and Object Files
-SRC = $(wildcard *.c)
+SRC = main.c school.c
 OBJ = $(SRC:%.c=%.o)
 
 # Executable Name
 NAME = school
 
 # Clean-up Command
-RM = rm -f
+RM =
 
 # Phony Targets
 .PHONY: all clean fclean oclean re
