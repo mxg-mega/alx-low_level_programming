@@ -2,15 +2,11 @@
 
 CC = gcc
 SRC = main.c school.c
-OBJ = main.o school.o
+OBJ = ${SRC:%.c=%.o}
 NAME = school
 
-all: ${NAME} ${OBJ}
-	${CC} ${OBJ} -o school
-
-${NAME}: ${SRC}
-	${CC}  -c -o main.o main.c
-	${CC}  -c -o school.o school.c
+all: ${OBJ}
+	${CC} ${OBJ} -o ${NAME}
 
 clear:
 	rm *.o
