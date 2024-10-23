@@ -3,7 +3,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 # Source and Object Files
-SRC = main.c school.c
+SRC = main.c school.c m.h
 OBJ = $(SRC:%.c=%.o)
 
 # Executable Name
@@ -19,7 +19,7 @@ RM =
 all: $(NAME)
 
 # Link Object Files into Executable
-$(NAME): m.h $(OBJ)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $(NAME)
 
 # Include Dependency Files for Header Tracking
