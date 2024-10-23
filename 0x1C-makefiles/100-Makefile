@@ -10,7 +10,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 # Clean-up Command
-RM = rm -f
+RM =
 
 # Phony Targets
 .PHONY: all clean fclean oclean re
@@ -27,14 +27,14 @@ $(NAME): $(OBJ)
 
 # Clean Object Files, Executable, and Backup Files
 clean:
-	$(RM) $(NAME) *~
+	rm -f $(NAME) *~
 
 # Full Clean: Removes All Object Files
 fclean: clean oclean
 
 # Clean Only Object Files
 oclean:
-	$(RM) *.o
+	rm -f *.o
 
 # Rebuild the Project from Scratch
 re: fclean all
