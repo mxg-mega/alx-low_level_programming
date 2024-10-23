@@ -1,34 +1,49 @@
-CC=gcc
-SRC=$(wildcard *.c)
-OBJ=$(SRC:.c=.o)
-NAME=school
-RM=rm -f
-CFLAGS=-Wall -Werror -Wextra -pedantic
+# Compiler and Flags
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra -pedantic
 
+# Source and Object Files
+SRC = $(wildcard *.c)
+OBJ = $(SRC:.c=.o)
+
+# Executable Name
+NAME = school
+
+# Clean-up Command
+RM = rm -f
+
+# Phony Targets
 .PHONY: all clean fclean oclean re
 
+# Default Target (Build the Executable)
 all: $(NAME)
 
+# Link Object Files into Executable
 $(NAME): $(OBJ)
-    $(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $^
 
+# Compile Source Files into Object Files
+%.o: %.c
+	$(CC) $(CFLAGS) -c -o $@ $< -MMD -MP
+
+# Include Dependency Files for Header Tracking
+-include $(OBJ:.o=.d)
+
+# Clean Object Files, Executable, and Backup Files
 clean:
 	$(RM) $(OBJ) $(NAME) *~
 
+# Full Clean: Removes All Object Files
 fclean: clean
-    $(RM) *.o
+	$(RM) *.o
 
+# Clean Only Object Files
 oclean:
 	$(RM) $(OBJ)
 
+# Rebuild the Project from Scratch
 re: fclean all
 
+# Mark Object Files and Executable as Precious (Prevent Accidental Deletion)
 .PRECIOUS: $(OBJ) $(NAME)
-
--include $(OBJ:.o=.d)
-
-.c.o:
-	$(CC) $(CFLAGS) -c -o $@ $< -MMD -MP
-
-m.h:
 
