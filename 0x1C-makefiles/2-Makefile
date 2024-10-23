@@ -1,0 +1,16 @@
+.PHONY: all
+
+CC = gcc
+SRC = main.c school.c
+OBJ = main.o school.o
+NAME = school
+
+all: ${NAME} ${OBJ}
+	${CC} ${OBJ} -o school
+
+${NAME}: ${SRC}
+	${CC}  -c -o main.o main.c
+	${CC}  -c -o school.o school.c
+
+clear:
+	rm *.o
