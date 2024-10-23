@@ -10,7 +10,7 @@ OBJ = $(SRC:%.c=%.o)
 NAME = school
 
 # Clean-up Command
-RM =
+RM = rm -f
 
 # Phony Targets
 .PHONY: all clean fclean oclean re
@@ -37,7 +37,7 @@ oclean:
 	$(RM) *.o
 
 # Rebuild the Project from Scratch
-re: m.h fclean all
+re: fclean all
 
 # Mark Object Files and Executable as Precious (Prevent Accidental Deletion)
 .PRECIOUS: $(OBJ) $(NAME)
