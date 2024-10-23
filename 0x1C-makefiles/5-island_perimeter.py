@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Island Perimeter Function to calculate the Perimeter of a Grid
+"""
+
 
 def island_perimeter(grid):
     """
@@ -18,7 +22,7 @@ def island_perimeter(grid):
             if grid[i][j] == 1:
                 if (j >= 0 and j < len(grid[i])) and grid[i][j + 1] == 1:
                     perimeter -= 1
-                if (j <= len(grid[i]) and j > 0 ) and grid[i][j - 1] == 1:
+                if (j <= len(grid[i]) and j > 0) and grid[i][j - 1] == 1:
                     perimeter -= 1
                 if (i >= 0 and i < len(grid)) and grid[i + 1][j] == 1:
                     perimeter -= 1
